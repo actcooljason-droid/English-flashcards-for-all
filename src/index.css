@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Nordic Cafe Palette */
+  --color-oatmeal: #FAF8F5;
+  --color-sage: #8DAA91;
+  --color-sage-dark: #6B846F;
+  --color-terracotta: #D6A48D;
+  --color-terracotta-dark: #B5846E;
+  --color-oak: #E8E2D9;
+
+  --shadow-soft: 0 8px 30px rgba(141, 170, 145, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-oatmeal text-slate-600 font-sans tracking-wider leading-relaxed;
+    /* Subtle oak texture hint for homepage */
+    background-image: radial-gradient(#E8E2D9 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+  }
+}
+
+.floating-card {
+  @apply bg-white rounded-[20px] border border-white/50 shadow-soft transition-all duration-500;
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md rounded-[24px] border border-white/40 shadow-soft transition-all duration-300;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 text-slate-500 hover:bg-sage/10 hover:text-sage cursor-pointer;
+}
+
+.sidebar-item.active {
+  @apply bg-sage text-white shadow-md;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-sage to-terracotta;
+}
